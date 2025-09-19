@@ -1,6 +1,4 @@
-# RTK streaming
-
-How to run it:
+# Streaming
 
 ```
 nvm use

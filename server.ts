@@ -1,12 +1,12 @@
 import express from "express";
-import { mobyDick } from "./mobyDick.ts";
+import { grapesOfWrath } from "./grapesOfWrath.ts";
 
 const app = express();
 const PORT = process.env.PORT || 5174;
 
 app.use(express.json());
 
-const chunks = mobyDick.split(/(?<=\s)/);
+const chunks = grapesOfWrath.split(/(?<=\s)/);
 
 app.get("/api/slow-stream", async (req, res) => {
   res.setHeader("Content-Type", "text/plain; charset=utf-8");

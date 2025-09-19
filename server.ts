@@ -24,13 +24,15 @@ app.get("/api/slow-stream", async (req, res) => {
   res.end("[END OF STREAM]\n");
 });
 
-app.listen(PORT, () => {
-  console.log(`Express API listening on http://localhost:${PORT}`);
-});
-
-// Serve static files from dist
+// ✅ Serve static files from dist
 app.use(express.static(path.join(__dirname, "dist")));
 
+// ✅ Fallback route for React Router
 app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, "dist/index.html"));
+});
+
+// ✅ Now start listening
+app.listen(PORT, () => {
+  console.log(`Express API listening on http://localhost:${PORT}`);
 });
